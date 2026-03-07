@@ -1,4 +1,4 @@
-# The Kubernetes Workshop - Chapter 01 - Exercise 1.01
+# The Kubernetes Workshop - Chapter 1 - Exercise 01.01
 
     docker run --rm -i hadolint/hadolint < Dockerfile
 
