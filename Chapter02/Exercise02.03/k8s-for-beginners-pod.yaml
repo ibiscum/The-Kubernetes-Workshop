@@ -2,7 +2,13 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: k8s-for-beginners
+  labels:
+    tier: frontend
 spec:
+  securityContext:
+    runAsUser: 1000
+    runAsGroup: 1000
+
   containers:
     - name: k8s-for-beginners
       image: k8s-for-beginners:v0.0.1
@@ -13,3 +19,6 @@ spec:
         limits:
           memory: "128Mi"
           cpu: "500m"
+      securityContext:
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: true
