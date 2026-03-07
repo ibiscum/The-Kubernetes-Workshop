@@ -1,5 +1,7 @@
 FROM alpine:3.10
 
-COPY main /
+COPY pageview-modified /usr/local/bin/
 
-CMD ["/main"]
+EXPOSE 8080
+
+CMD ["pageview-modified"]
