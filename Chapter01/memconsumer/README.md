@@ -1,4 +1,4 @@
-# The Kubernetes Workshop - Chapter 01 - Exercise 1.03
+# The Kubernetes Workshop - Chapter 1 - memconsumer
 
     docker run --rm -i hadolint/hadolint < Dockerfile
 
