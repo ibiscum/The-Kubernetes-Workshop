@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubeserve 
+  name: kubeserve
   labels:
-    app: kubeserve 
+    app: kubeserve
 spec:
   replicas : 3
   selector:
     matchLabels:
-      app: kubeserve 
+      app: kubeserve
   template:
     metadata:
       labels:
-        app: kubeserve 
+        app: kubeserve
     spec:
       containers:
       - name: nginx
