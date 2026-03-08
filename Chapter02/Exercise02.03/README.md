@@ -1,21 +1,21 @@
-# The Kubernetes Workshop - Chapter 02 - Exercise 02.03
+# The Kubernetes Workshop - Chapter 2 - Exercise 02.03
 
 linting:
 
-    docker run -v  -v .:/dir stackrox/kube-linter lint /dir
+    docker run -v .:/dir stackrox/kube-linter lint /dir
 
 setup load balancer: https://github.com/kubernetes-sigs/cloud-provider-kind
 
     kubectl cluster-info --context kind-kind
     kubectl get pod --show-labels
-    kubectl apply -f k8s-for-beginners-pod1.yaml
+    kubectl apply -f k8s-for-beginners-pod.yaml
     kubectl apply -f k8s-for-beginners-svc.yaml
     kubectl get service
     kubectl describe svc k8s-for-beginners
 
-port forwarding to pod:
+port forwarding to svc:
 
-    kubectl port-forward pod/k8s-for-beginners 9090:8080
+    kubectl port-forward service/k8s-for-beginners 9090:80
 
 install load balancer:
 
