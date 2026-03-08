@@ -1,4 +1,8 @@
-# The Kubernetes Workshop - Chapter 02 - Exercise 02.02
+# The Kubernetes Workshop - Chapter 2 - Exercise 02.02
+
+## linter
+
+    docker run -v .:/dir stackrox/kube-linter lint /dir
 
 ## minikube
 
@@ -14,4 +18,6 @@
     kubectl get pod -o wide
     kubectl describe pod k8s-for-beginners
     kubectl get node
-    docker ps -a
+    kubectl port-forward pod/k8s-for-beginners 9090:8080
+
+    curl localhost:9090

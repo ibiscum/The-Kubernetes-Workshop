@@ -13,3 +13,7 @@ spec:
         limits:
           memory: "128Mi"
           cpu: "500m"
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        readOnlyRootFilesystem: true
