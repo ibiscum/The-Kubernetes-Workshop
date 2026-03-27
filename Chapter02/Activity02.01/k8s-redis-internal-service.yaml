@@ -2,6 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: db
+  namespace: the-docker-workshop
 spec:
   selector:
     tier: backend

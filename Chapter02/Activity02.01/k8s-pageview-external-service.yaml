@@ -2,6 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: k8s-pageview
+  namespace: the-kubernetes-workshop
 spec:
   selector:
     tier: frontend
