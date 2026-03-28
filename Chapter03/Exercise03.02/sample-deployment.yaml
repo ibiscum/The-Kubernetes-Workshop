@@ -2,10 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kubeserve
+  namespace: the-kubernetes-workshop
   labels:
     app: kubeserve
 spec:
-  replicas : 3
+  replicas : 1
   selector:
     matchLabels:
       app: kubeserve
@@ -16,6 +17,17 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: nginx:1.29.6
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        securityContext:
+          runAsUser: 1000
+          runAsGroup: 1000
+          readOnlyRootFilesystem: true

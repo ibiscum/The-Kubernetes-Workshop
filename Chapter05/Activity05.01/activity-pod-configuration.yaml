@@ -8,6 +8,17 @@ spec:
   containers:
     - name: custom-application-container
       image: packtworkshops/the-kubernetes-workshop:custom-application-for-pods-chapter
+      resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        readOnlyRootFilesystem: true
       readinessProbe:
         exec:
           command:
