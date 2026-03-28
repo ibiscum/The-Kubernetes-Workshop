@@ -6,4 +6,33 @@ metadata:
 spec:
   containers:
   - name: my-first-container
-    image: nginx
+    image: bitnami/nginx@sha256:0395d4f646e90a60ccbe484078470e9fd26f7d4eabe20323135f70367ce443eb
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    securityContext:
+      runAsUser: 1001
+      runAsNonRoot: true
+      readOnlyRootFilesystem: true
+    volumeMounts:
+    - name: tmp-volume
+      mountPath: /tmp
+    - name: etc-volume
+      mountPath: /opt/bitnami/nginx/conf
+    - name: var-volume
+      mountPath: /opt/bitnami/nginx/logs
+    - name: server-status-volume
+      mountPath: /opt/bitnami/nginx/tmp
+  volumes:
+  - name: tmp-volume
+    emptyDir: {}
+  - name: etc-volume
+    emptyDir: {}
+  - name: var-volume
+    emptyDir: {}
+  - name: server-status-volume
+    emptyDir: {}

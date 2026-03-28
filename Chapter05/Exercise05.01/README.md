@@ -10,3 +10,5 @@ running:
     kubectl config set-context --current --namespace="the-kubernetes-workshop"
     kubectl create -f single-container-pod.yaml
     kubectl get pods
+    kubectl describe pod
+    kubectl delete pod first-pod
